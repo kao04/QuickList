@@ -53,18 +53,22 @@ function removeItem(itemName) {
         items.splice(itemIndex, 1)
 
         showItemsList()
-        
+
     }
 }
 
 function checkItem(itemName) {
     const item = items.find(item => item.name === itemName)
 
-    if (item === true) {
+    /*if (item === true) {
         items.checkItem = false
     } else {
         items.checkItem = true
-    }
+    }*/
 
+    ///item.checked ? item.checkItem = false : item.checkItem = true
+
+    item.checkItem = !item.checked
+    
     showItemsList()
 }
