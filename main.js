@@ -80,3 +80,6 @@ function checkItem(itemName) {
     showItemsList()
 }
 
+function addHideWarningclass() {
+  document.querySelector(".warning").classList.add("hide-warning")
+}
