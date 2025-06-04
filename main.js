@@ -9,4 +9,6 @@ const item ={
 }
 
 items.push(item)
+
+document.querySelector('#item').value = ""
 }
