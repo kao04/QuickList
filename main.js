@@ -1,12 +1,12 @@
-const items = []
+let items = []
 
 function addItem() {
     const itemName = document.querySelector('#item').value
 
-if (itemName === "") {
-    alert("Digite um item valido")
-    return
-}
+    if (itemName === "") {
+        alert("Digite um item valido")
+        return
+    }
 
     const item = {
         name: itemName,
@@ -41,6 +41,8 @@ function showItemsList() {
             </div>
          `
     })
+
+    localStorage.setItem("items", JSON.stringify(items))
 }
 
 function removeItem(itemName) {
@@ -81,5 +83,16 @@ function checkItem(itemName) {
 }
 
 function addHideWarningclass() {
-  document.querySelector(".warning").classList.add("hide-warning")
+    document.querySelector(".warning").classList.add("hide-warning")
 }
+
+function verifyLocalStorage() {
+    const localStorageItems = localStorage.getItem("items")
+
+    if (localStorageItems) {
+        items = JSON.parse(localStorageItems)
+        showItemsList()
+    }
+}
+
+verifyLocalStorage()
