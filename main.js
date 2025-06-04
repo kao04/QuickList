@@ -24,6 +24,8 @@ function showItemsList() {
     const selectionlist = document.querySelector('.list')
     selectionlist.textContent = ""
 
+items.sort((itemA, itemB) => Number(itemA.checked) - Number(itemB.checked))
+asdas
     items.map((item, index) => {
         selectionlist.innerHTML += `
          <div class="item">
