@@ -23,7 +23,7 @@ function showItemsList() {
         selectionlist.innerHTML += `
          <div class="item">
                 <div>
-                    <input type="checkbox" name="list" id="item-${index}">
+                    <input type="checkbox" name="list" id="item-${index}" ${item.checked && "checked"}>
 
                     <div class="custom-checkbox" onclick="checkItem('${item.name}')">
                         <img src="./assets/checked.svg" alt="checked">
@@ -68,7 +68,9 @@ function checkItem(itemName) {
 
     ///item.checked ? item.checkItem = false : item.checkItem = true
 
-    item.checkItem = !item.checked
-    
+    item.checked = !item.checked
+
+    console.log(item)
+
     showItemsList()
 }
